@@ -1,0 +1,67 @@
+<!-- TOPICS COVERS: -->
+
+<!-- FORM DATA : GET VALUE -->
+<!-- OBJECT.KEY() -->
+<!-- OBJECT.VALUE -->
+<!-- OBJECT.ENTRIES -->
+<!-- FOR IN LOOP ( ONLY USED FOR OBJECT ) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Create an Account</h2>
+    <form onsubmit="main(event)">
+        <label for="">Email</label>
+        <input type="text" name="email"> <br> <br>
+
+        <label for="">Password</label>
+        <input type="password" name="password"> <br>
+        <input type="submit">
+    </form>
+
+    <script>
+
+        let obj = {
+            email: "hasdsa",
+            password: "asdasda",
+            id: "",
+            isActive: true,
+            subjects: ['CS', 'MTH', 'PHY']
+        }
+
+        let keys = Object.keys(obj)
+        // console.log(keys,"=> KEYS")
+
+        let values = Object.values(obj);
+        // console.log(values, "=> VALUES")
+
+        let entries = Object.entries(obj)
+        // console.log(entries, "=> ENTREIS")
+
+        for (const key in obj) {
+            console.log(key, obj[key])            
+        }
+
+        function main(event) {
+            event.preventDefault();
+            // console.log(event);
+
+            // console.log(event.target,"TARGET")
+            let newForm = new FormData(event.target);
+            console.log(newForm)
+
+            console.log(newForm.get("email"))
+            console.log(newForm.get("password"))
+        }
+    </script>
+</body>
+
+</html>

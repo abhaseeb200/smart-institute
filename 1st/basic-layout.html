@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 120px;
+        }
+
+        .item {
+            background: transparent;
+            border: 0;
+            border-bottom: 2px solid #000000;
+            margin-right: 15px;
+        }
+
+        .about-image {
+            width: 300px;
+        }
+        .about-section {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-section {
+            background-image: url('close-up-keyboard-glasses.avif');
+        }
+        .hero-heading {
+            font-size: 40px;
+            color: #000;
+            text-align: center;
+        }
+        .hero-para {
+            color: #000;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img class="logo" src="logo.png" alt="logo">
+
+        <div>
+            <button class="item">Home</button>
+            <button class="item">About Us</button>
+            <button class="item">Contact Us</button>
+            <button class="item">Login</button>
+            <button class="item">Sign up</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hero section -->
+        <section class="hero-section">
+            <h1 class="hero-heading">Welcome to Our Website</h1>
+            <p class="hero-para">Discover our services and learn more about what we offer.</p>
+        </section>
+
+        <!-- about us -->
+        <section class="about-section">
+            <img class="about-image" src="close-up-keyboard-glasses.avif" alt="image">
+            <div>
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, non itaque. Molestias, omnis obcaecati.
+                    Suscipit rem dolore laborum itaque eveniet aspernatur odit doloremque, obcaecati mollitia vero
+                    praesentium possimus molestiae! Officia?</p>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>

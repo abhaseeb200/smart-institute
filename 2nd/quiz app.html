@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Quiz App.</h1>
+    <div id="data"></div>
+    <form id="onclicksubmit(" main")">
+        <input type="submit" value="submit">
+
+        <script>
+            let quiz = [
+                {
+                    question: "Who is leader of PTI",
+                    options: ['nawaz shareef', 'imran khan', 'bilwal', 'imran khan'],
+                    correct: 0
+                },
+                {
+                    question: "Who is founder of pakistan",
+                    options: ['Allama Iqbal', 'Quaid-e-Azam', 'Sir Syed Ahmed Khan', 'Liaquat Ali Khan'],
+                    correct: 0
+                },
+                {
+                    question: "Who is leader of MQM",
+                    options: ['Bhai', 'IK', 'PPP', 'Bhen'],
+                    correct: 0
+                }
+            ]
+
+            let data = document.getElementById('data');
+
+
+
+            for (let i = 0; i < quiz.length; i++) {
+                let optionsHTML = '';
+                let options = quiz[i].options;
+
+                for (let j = 0; j < options.length; j++) {
+                    optionsHTML += `
+                    <li onclick='selectOption(${j})'>
+                        <input type="radio" name="q${i}" value="${options[j]}"> ${options[j]}
+                    </li>`;
+                }
+                data.innerHTML += `
+                    <div>
+                        <h3>${quiz[i].question}</h3>
+                        ${optionsHTML}
+                    </div>
+                `
+            }
+
+            function selectOption(index) {
+                console.log("Selected option index: " + index);
+            }
+        </script>
+</body>
+
+</html>
+
+<!-- 
+<ul>
+    ${quiz[i].options[0] }
+    ${quiz[i].options[1] }
+    ${quiz[i].options[2] }
+    ${quiz[i].options[3] }
+</ul> -->
+<!-- 
+    <input type="radio" name="q${i}" value="${quiz[i].options[0]}"> ${quiz[i].options[0]} <br>
+    <input type="radio" name="q${i}" value="${quiz[i].options[1]}"> ${quiz[i].options[1]} <br>
+    <input type="radio" name="q${i}" value="${quiz[i].options[2]}"> ${quiz[i].options[2]} <br>
+    <input type="radio" name="q${i}" value="${quiz[i].options[3]}"> ${quiz[i].options[3]} <br> -->

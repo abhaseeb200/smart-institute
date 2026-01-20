@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagram Grid Layout</title>
+    <style>
+        body {
+            /* background: red; */
+        }
+
+        .wrapper {
+            display: flex;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            /* gap: 20px; */
+            justify-content: space-between;
+
+        }
+
+        .child {
+            background: black;
+            color: white;
+            width: 19%;
+            height: 200px;
+            font-size: 80px;
+        }
+
+        input[type="email"]:hover {
+            background: red;
+        }
+
+        @media (max-width:1200px) {
+            .child {
+                width: 32%;
+            }
+
+            .wrapper {
+                gap: 20px;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width:425px) {
+            .child {
+                width: 100%;
+            }
+        }
+
+
+
+
+        /* 1200px - onwards */
+        /* @media(min-width:1200px) {
+        body {
+            background: green;
+        }
+       }
+       /* 1px --- 800px */
+        @media(max-width:800px) {
+            body {
+                background: yellow;
+            }
+        }
+
+        */
+    </style>
+</head>
+
+<body class="">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="430.000000pt" height="302.000000pt"
+        viewBox="0 0 430.000000 302.000000" preserveAspectRatio="xMidYMid meet">
+        <metadata>
+            Created by potrace 1.16, written by Peter Selinger 2001-2019
+        </metadata>
+        <g transform="translate(0.000000,302.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+        </g>
+    </svg>
+    <div class="wrapper">
+        <!-- email -->
+        <div class="child">
+            <label for=""></label>
+            <input type="email" name="email" placeholder="johndoe@gmail.com">
+            <span id="error"></span>
+        </div>
+        <!-- email -->
+        <div class="group-field">
+            <label for=""></label>
+            <input type="email" name="email" placeholder="johndoe@gmail.com">
+            <span id="error"></span>
+        </div>
+
+        <!-- password -->
+        <div class="group-field">
+            <label for=""></label>
+            <input type="password" name="email" placeholder="johndoe@gmail.com">
+            <span id="error"></span>
+        </div>
+
+        <!-- submit -->
+        <div class="group-field">
+            <label for=""></label>
+            <input type="submit" name="email" placeholder="johndoe@gmail.com">
+            <span id="error"></span>
+        </div>
+
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+</body>
+
+</html>
