@@ -71,7 +71,7 @@
 
         //schema
         const product = [{
-            id: Date.now(), //number 
+            id: Math.floor(Math.random() * 1000000), //number 
             name: "Polo shirt",
             description: 'lorum ispam dollar....',
             stocks: 12, // number
@@ -81,7 +81,7 @@
             gallery: ['/image.png', 'image2.png', 'image3.png']
         },
         {
-            id: Date.now(), //number 
+            id: Math.floor(Math.random() * 1000000), //number 
             name: "Polo shirt 2",
             description: 'lorum ispam dollar....2',
             stocks: 1123, // number
@@ -91,7 +91,7 @@
             gallery: ['/image.png', 'image2.png', 'image3.png']
         },
         {
-            id: Date.now(), //number 
+            id: Math.floor(Math.random() * 1000000), //number 
             name: "Polo shirt 2",
             description: 'lorum ispam dollar....2',
             stocks: 1123, // number
@@ -101,25 +101,45 @@
             gallery: ['/image.png', 'image2.png', 'image3.png']
         }]
 
+        // console.log(product)
+
         const data = document.getElementById('data')
 
         for (let i = 0; i < product.length; i++) {
+            const { id,thumbnail, name, description, price, currency } = product[i]; //OBECJT DESTRUCTURING...
+            
             data.innerHTML += `
                 <div class="card">
-                    <img src="${product[i].thumbnail}" alt="">
-                    <h2>${product[i].name}</h2>
-                    <p>${product[i].description}</p>
-                    <p class="price"> ${product[i].currency} <span>${product[i].price}</span> </p>
-                    <button onclick="addToCart(${product[i].id})">Add to Cart</button>
+                    <img src="${thumbnail}" alt="">
+                    <h2>${name}</h2>
+                    <p>${description}</p>
+                    <p class="price"> ${currency} <span>${price}</span> </p>
+                    <button onclick="addToCart(${id}, ${i})">Add to Cart</button>
                 </div>
         `;
         }
 
-        function addToCart(productId) {
-            let obj = { id: productId }
-            cartData.push(obj)
-            console.log(cartData)
+        cos(90) = 0;
+        sin(0) = 0
+
+        function addToCart(productId, index) {
+            let quantity = 0;
+            console.log(index,"____")
+
+            // let isExist = cartData.some(item => productId === item.id)
+            
+            // console.log(isExist,"IS EXIST")
+            
+            // if (!isExist) {
+            //      cartData.push({ id: productId, quantity: quantity })
+            // } else {
+
+            // }
+            
+           
+            // console.log(cartData)
         }
+
     </script>
 </body>
 
