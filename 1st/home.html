@@ -44,6 +44,28 @@
             padding: 12px 24px;
             border-radius: 100px;
         }
+
+        .backgroung-hero {
+            background-image: url('../images/Hero-section.webp');
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .overlay {
+            background: #0000005b;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        h1, p, button {
+            color: #fff;
+            z-index: 0;
+        }
     </style>
 </head>
 
@@ -65,7 +87,17 @@
         </div>
     </header>
 
-    <main></main>
+    <main>
+        <section class="backgroung-hero">
+            <div class="overlay"></div>
+
+            <h1>Welcome to Our Website</h1>
+            <p>This is the home page content.</p>
+            <button>Learn More</button>
+        </section>
+    </main>
+
+    
 
     <footer></footer>
 </body>
