@@ -68,6 +68,7 @@
 
     <script>
         const cartData = []
+        const whishlist = [];
 
         //schema
         const product = [{
@@ -98,10 +99,9 @@
             price: 800, // number
             currency: "$",
             thumbnail: 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png',
-            gallery: ['/image.png', 'image2.png', 'image3.png']
+            gallery: ['/image.png', 'image2.png', 'image3.png'],
+            timestamp :Date.now()
         }]
-
-        // console.log(product)
 
         const data = document.getElementById('data')
 
@@ -110,6 +110,7 @@
             
             data.innerHTML += `
                 <div class="card">
+                    <div onclick="whishlistHandler(id)" sytle="cursor:pointer">❤</div>
                     <img src="${thumbnail}" alt="">
                     <h2>${name}</h2>
                     <p>${description}</p>
@@ -118,9 +119,6 @@
                 </div>
         `;
         }
-
-        cos(90) = 0;
-        sin(0) = 0
 
         function addToCart(productId, index) {
             let quantity = 0;
@@ -140,6 +138,23 @@
             // console.log(cartData)
         }
 
+
+        // ADD WHISHLIST LOGIC...
+        const whishlistHandler = (productId) => {
+            // console.log(productId);
+            // find {}
+            undefined
+
+            if (product.includes(productId)) {
+                // console.log("phele se majood hai, whislist me");
+            } else {
+                // push ki logic laga do
+                // let obj = {id: productId}
+                // whishlist.push(obj);
+            }
+        }
+
+        // CLICK ON LOGOUT BUTTON... 
     </script>
 </body>
 
