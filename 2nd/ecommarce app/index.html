@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shop</title>
 </head>
 
 <style>
@@ -69,6 +69,7 @@
     <script>
         const cartData = []
         const whishlist = [];
+        const cartHTML = document.getElementById("cart");
 
         //schema
         const product = [{
@@ -100,14 +101,14 @@
             currency: "$",
             thumbnail: 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png',
             gallery: ['/image.png', 'image2.png', 'image3.png'],
-            timestamp :Date.now()
+            timestamp: Date.now()
         }]
 
         const data = document.getElementById('data')
 
         for (let i = 0; i < product.length; i++) {
-            const { id,thumbnail, name, description, price, currency } = product[i]; //OBECJT DESTRUCTURING...
-            
+            const { id, thumbnail, name, description, price, currency } = product[i]; //OBECJT DESTRUCTURING...
+
             data.innerHTML += `
                 <div class="card">
                     <div onclick="whishlistHandler(id)" sytle="cursor:pointer">❤</div>
@@ -120,22 +121,21 @@
         `;
         }
 
+
         function addToCart(productId, index) {
-            let quantity = 0;
-            console.log(index,"____")
+            let quantity = 1;
+            let isExist = cartData.findIndex(item => productId === item.id)
 
-            // let isExist = cartData.some(item => productId === item.id)
-            
-            // console.log(isExist,"IS EXIST")
-            
-            // if (!isExist) {
-            //      cartData.push({ id: productId, quantity: quantity })
-            // } else {
+            if (isExist >= 0) {
+                // true hoga:
+                cartData[isExist].quantity += 1
+            } else {
+                // yah false:
+                cartData.push({ id: productId, quantity: quantity })
+            }
 
-            // }
-            
-           
-            // console.log(cartData)
+            console.log(cartData)           
+            localStorage.setItem("cart", JSON.stringify(cartData))
         }
 
 
