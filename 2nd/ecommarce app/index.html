@@ -68,7 +68,7 @@
 
     <script>
         const cartData = []
-        const whishlist = [];
+        const WHISHLIST = []; // ['1232108', '21312']
         const cartHTML = document.getElementById("cart");
 
         //schema
@@ -106,12 +106,16 @@
 
         const data = document.getElementById('data')
 
-        for (let i = 0; i < product.length; i++) {
-            const { id, thumbnail, name, description, price, currency } = product[i]; //OBECJT DESTRUCTURING...
+        const render = () => {
+            data.innerHTML = "";
+            for (let i = 0; i < product.length; i++) {
+                const isActive = WHISHLIST.some(item => item === product[i].id);
 
-            data.innerHTML += `
+                const { id, thumbnail, name, description, price, currency } = product[i]; //OBECJT DESTRUCTURING...
+
+                data.innerHTML += `
                 <div class="card">
-                    <div onclick="whishlistHandler(id)" sytle="cursor:pointer">❤</div>
+                    <div onclick="whishlistHandler(${id}, ${i})" style="cursor:pointer; font-size:26px; color: ${isActive ? 'red' : '#000'}">❤</div>
                     <img src="${thumbnail}" alt="">
                     <h2>${name}</h2>
                     <p>${description}</p>
@@ -119,9 +123,10 @@
                     <button onclick="addToCart(${id}, ${i})">Add to Cart</button>
                 </div>
         `;
+            }
         }
 
-
+        render();
         function addToCart(productId, index) {
             let quantity = 1;
             let isExist = cartData.findIndex(item => productId === item.id)
@@ -134,25 +139,41 @@
                 cartData.push({ id: productId, quantity: quantity })
             }
 
-            console.log(cartData)           
+            console.log(cartData)
             localStorage.setItem("cart", JSON.stringify(cartData))
         }
 
 
         // ADD WHISHLIST LOGIC...
         const whishlistHandler = (productId) => {
-            // console.log(productId);
-            // find {}
-            undefined
+            console.log(productId, index);
 
-            if (product.includes(productId)) {
-                // console.log("phele se majood hai, whislist me");
+            const isExist = WHISHLIST.includes(productId)
+
+            console.log(isExist); // return array [] karyga..
+
+
+            if (isExist.length) {
+
             } else {
-                // push ki logic laga do
-                // let obj = {id: productId}
-                // whishlist.push(obj);
+                WHISHLIST.filter(i => i.id === productId)
             }
+
+
+            WHISHLIST.push(productId)
+            // let isExist = WHISHLIST.splice(index, index + 1)
+            console.log(isExist);
+
+
+            // if (kuch hoga true false hoga..) {
+            // } else {
+            //     // yaha per remove hojaiega
+            // }
+
+            console.log(WHISHLIST, "_______")
+            render()
         }
+
 
         // CLICK ON LOGOUT BUTTON... 
     </script>

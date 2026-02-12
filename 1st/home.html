@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My First Website</title>
     <style>
         /* flex-direction: column
         position: absolute
@@ -110,7 +110,8 @@
 
         .about-flex {
             display: flex;
-            gap: 20px;
+            align-items: center;
+            gap: 40px;
         }
 
         .about-image {
@@ -125,6 +126,59 @@
 
         .about-flex p {
             font-size: 18px;
+        }
+
+        .about-flex a {
+            text-decoration: none;
+        }
+
+        .about-flex button {
+            background: #000;
+        }
+
+        .about-flex a {
+            color: #fff;
+            padding: 8px 14px;
+            display: block;
+        }
+
+        .learn-more {
+            margin-left: 20px;
+        }
+
+        .about-flex p {
+            height: 250px;
+            /* background: yellow; */
+            overflow: scroll;
+        }
+
+        .extra {}
+
+        .one {
+            background: red;
+            width: 100px;
+            height: 100px;
+            z-index: 0;
+            position: relative;
+        }
+
+        .two {
+            background: yellow;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+            position: relative;
+            margin-top: -50px;
+
+        }
+
+        .three {
+            margin-top: -50px;
+            background: green;
+            width: 100px;
+            height: 100px;
+            z-index: 2;
+            position: relative;
         }
     </style>
 </head>
@@ -160,20 +214,55 @@
         <section>
             <div class="about-flex">
                 <img src="../images/house-property.jpg" alt="House Property" class="about-image">
-                
+
                 <div>
                     <h2 class="about-heading">Who we are...!</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia voluptatem
                         nostrum repellendus.
                         Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
-                    Quisquam.</p>
+                        Quisquam.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia
+                        voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia
+                        voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia
+                        voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum nisi, a mollitia
+                        voluptatem
+                        nostrum repellendus.
+                        Dolore, cupiditate similique facere quibusdam eos quo, aperiam voluptas qui omnis aut nihil!
+                        Quisquam.</p>
+
+                    <button class=""> <a href="#"> Learn More </a> </button>
+                    <button class="learn-more"> <a href="#"> Contact Us </a></button>
                 </div>
             </div>
         </section>
-
-
     </main>
 
+
+    <section class="extra">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </section>
 
 
     <footer></footer>

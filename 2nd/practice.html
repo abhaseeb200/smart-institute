@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .cart {
+            background: yellow;
+            height: 100vh;
+            /* fit to screen */
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+        }
+
+        button {
+            font-size: 22px;
+        }
+
+        .cart {
+            transform: translateX(200%);
+            transition: 0.4s all ease-in-out;
+        }
+
+        .active {
+            transform: translateX(0) !important;
+        }
+
+        #popup {
+            opacity: 0;
+            /* display: none; */
+            background: yellow;
+            height: 200px; 
+            width: 700px;
+            /* display flex se perfect center */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            padding: 40px;
+
+            /* position abolute se perfect center */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            transition: 0.4s all ease-in-out;
+        }
+
+        .popup-active {
+            opacity: 100% !important;
+           /* display: flex !important; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="handlePopup()">Click Me!</button>
+    <button onclick="handleCartToggle()">Card Button</button>
+
+
+    <!-- popup -->
+    <div id="popup">
+        <h2>I am pookie!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ex cupiditate aperiam perspiciatis
+            debitis officiis id harum dolore, temporibus voluptatum cumque, aliquid nam voluptas ullam quos ad dolorum
+            eum rerum.</p>
+    </div>
+
+
+    <div class="cart" id="cart">
+        <!-- item 1 -->
+        <div>
+            <p>Iphone</p>
+            <p>Quantity: 22</p>
+            <p>Price: $2200</p>
+        </div>
+
+        <!-- item 2 -->
+        <div>
+            <p>Iphone</p>
+            <p>Quantity: 22</p>
+            <p>Price: $2200</p>
+        </div>
+
+        <!-- item 3 -->
+        <div>
+            <p>Iphone</p>
+            <p>Quantity: 22</p>
+            <p>Price: $2200</p>
+        </div>
+    </div>
+
+    <script>
+        const cart = document.getElementById('cart')
+        const popup = document.getElementById("popup")
+
+        function handlePopup() {
+            let isActive = popup.classList.contains('popup-active');
+
+            if (isActive) {
+                popup.classList.remove('popup-active')
+            } else {
+                popup.classList.add('popup-active')
+            }
+        }
+
+        function handleCartToggle() {
+            let isActive = cart.classList.contains('active');
+
+            if (isActive) {
+                cart.classList.remove('active')
+            } else {
+                cart.classList.add('active')
+            }
+        }
+    </script>
+
+</body>
+
+</html>
