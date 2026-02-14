@@ -59,18 +59,95 @@
         font-size: 40px;
         font-weight: normal;
     }
+
+    .tabs span {
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border-radius: 100px;
+        cursor: pointer;
+        display: inline-block;
+        margin-bottom: 15px;
+        border: 1px solid #000;
+        transition: 0.4s all ease-in-out;
+
+        &:hover {
+            background: white;
+            color: #000;
+        }
+    }
+
+    .content div {
+            /* background: orange !important; */
+            display: none;
+        }
 </style>
 
 
 <body>
-    <div id="data"></div>
+    <!-- Tabs -->
+    <div class="tabs">
+        <h3>Categories</h3>
+        <span onclick="handleAll()">All</span>
+        <span onclick="handleMen()">Men</span>
+        <span onclick="handleWomen()">Women</span>
+        <span onclick="handleKids()">Kids</span>
+    </div>
 
+    <!-- Content -->
+    <div class="content">
+        <div id="all">
+            <h3>All Products Here:</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam inventore, rem maiores aut soluta
+                libero
+                molestiae, sunt nam dolor ipsum vitae perferendis facere, magni itaque. Officia, quae. Animi, provident
+                eum.
+            </p>
+        </div>
+
+        <div id="men">
+            <h3>Men Products</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam inventore, rem maiores aut soluta
+                libero
+                molestiae, sunt nam dolor ipsum vitae perferendis facere, magni itaque. Officia, quae. Animi, provident
+                eum.
+            </p>
+        </div>
+
+        <div id="women">
+            <h3>Women Products</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam inventore, rem maiores aut soluta
+                libero
+                molestiae, sunt nam dolor ipsum vitae perferendis facere, magni itaque. Officia, quae. Animi, provident
+                eum.
+            </p>
+        </div>
+
+        <div id="kids">
+            <h3>All Products Here:</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam inventore, rem maiores aut soluta
+                libero
+                molestiae, sunt nam dolor ipsum vitae perferendis facere, magni itaque. Officia, quae. Animi, provident
+                eum.
+            </p>
+        </div>
+    </div>
+
+
+
+    <div id="data"></div>
 
     <script>
         const cartData = []
         const WHISHLIST = []; // ['1232108', '21312']
         const cartHTML = document.getElementById("cart");
+        const allContent = document.getElementById("all");
 
+
+        function handleAll() {
+            allContent.style.display = "block";
+        }
+        
         //schema
         const product = [{
             id: Math.floor(Math.random() * 1000000), //number 

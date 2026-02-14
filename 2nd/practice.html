@@ -35,7 +35,9 @@
         }
 
         #popup {
-            opacity: 0;
+            /* opacity: 0; */
+            transform: translate(-50%, -50%) scale(0);
+            transform-origin: center center;
             /* display: none; */
             background: yellow;
             height: 200px; 
@@ -51,13 +53,15 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
 
             transition: 0.4s all ease-in-out;
         }
 
         .popup-active {
-            opacity: 100% !important;
+
+            /* opacity: 100% !important; */
+              transform: translate(-50%, -50%) scale(1) !important;
+
            /* display: flex !important; */
         }
     </style>
